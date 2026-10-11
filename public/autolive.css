@@ -1,0 +1,8 @@
+.auto-feed{margin:18px 0}.af-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:10px}
+.af-card{background:var(--card,#fff);border:1px solid var(--line,#e2e8f0);border-radius:var(--radius-sm,12px);padding:14px;display:flex;flex-direction:column;gap:6px}
+.af-card h3{font-size:14px;margin:0;line-height:1.35}.af-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-soft,#64748b)}
+.af-badge{font-weight:800;font-size:10px;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:#dbeafe;color:#1d4ed8}
+.af-badge.is-ext{background:#fef3c7;color:#92400e}.af-badge.is-amd{background:#ede9fe;color:#5b21b6}.af-badge.is-det{background:#f1f5f9;color:#475569;border:1px dashed #94a3b8}.af-badge.is-ret{background:#fee2e2;color:#991b1b}
+.af-note{font-size:11px;color:var(--ink-soft,#64748b);margin:0}.af-changes{margin:0;padding-left:16px;font-size:12px}
+.af-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.af-actions a.mini-btn{text-decoration:none}
+.af-empty{padding:16px;border:1px dashed var(--line,#cbd5e1);border-radius:12px;font-size:13px;color:var(--ink-soft,#64748b)}

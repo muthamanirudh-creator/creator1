@@ -1,0 +1,16 @@
+/* v2.10.0 instant alerts + coverage (additive). Uses existing design tokens where present; safe fallbacks otherwise. */
+.na-panel{margin:16px 0;padding:16px;border:1px solid var(--line,#d9e2dc);border-radius:14px;background:var(--panel,#fff)}
+.na-panel .panel-title{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.na-state{font-size:12px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:#e8ecea;color:#44524b}
+.na-state.is-on{background:#d9f3e1;color:#14532d}
+.na-opts{display:grid;gap:8px;margin:12px 0}
+.na-chk{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.35}
+.na-chk input{margin-top:3px}
+.na-states summary{cursor:pointer;font-weight:600;font-size:14px;padding:4px 0}
+.na-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 12px;margin-top:8px;max-height:260px;overflow:auto;padding:4px}
+.na-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.na-actions a.mini-btn{text-decoration:none;display:inline-flex;align-items:center}
+.na-msg{min-height:20px;margin-top:8px;font-size:14px}
+.na-ok{color:#14532d}.na-err{color:#9b1c1c}
+.na-note,.na-cov{font-size:13px;margin:8px 0 0}
+@media (max-width:520px){.na-grid{grid-template-columns:1fr 1fr}}

@@ -1,0 +1,23 @@
+node_modules/
+storage/
+campus/ai-ml-service/data/hybrid_rag/
+
+# secrets and local config - never commit
+.env
+.env.*
+!.env.example
+campus/backend/.env
+campus/backend/.env.*
+!campus/backend/.env.example
+campus/ai-ml-service/.env
+campus/ai-ml-service/.env.*
+!campus/ai-ml-service/.env.example
+
+# OS / editor / logs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+__pycache__/
+*.pyc

@@ -1,0 +1,53 @@
+/* GovCareer AI in the Campus Portal theme. Every rule is scoped to html.gc-embed (set by embed.js),
+ * so standalone GovCareer keeps its own look. Tokens mirror the Campus design system
+ * (brand blue #0270c7, slate surfaces, rounded-2xl/3xl cards, Inter). */
+html.gc-embed{
+  --paper:transparent;--card:#fff;--ink:#0f172a;--ink-soft:#64748b;--line:#e2e8f0;--surface:#fff;--surface-2:#f1f5f9;--panel:#fff;
+  --mint:#bae0fd;--mint-strong:#0270c7;--accent:#0270c7;--shadow:0 1px 2px rgba(15,23,42,.05),0 8px 28px rgba(15,23,42,.05);
+  --radius:24px;--radius-sm:12px;--bg:#fff;--bg-2:#f8fafc;--white:#0f172a;--muted:#64748b;
+  --amber:#d97706;--red:#e11d48;--green:#059669;
+  background:transparent;
+}
+html.gc-embed.gc-dark,html.gc-embed body.dark{
+  --card:#151f30;--ink:#e5edf8;--ink-soft:#94a3b8;--line:#28374d;--surface:#151f30;--surface-2:#0f172a;--panel:#151f30;
+  --mint:#7cc8fc;--mint-strong:#36adfa;--accent:#36adfa;--shadow:0 12px 34px rgba(0,0,0,.25);--bg:#0f172a;--bg-2:#0f172a;--white:#e5edf8;
+  color-scheme:dark;
+}
+html.gc-embed body{background:transparent!important;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+/* Campus already provides the brand, health strip, footer and link back to itself. */
+html.gc-embed .brand-lockup,html.gc-embed .trust-strip,html.gc-embed .site-footer,html.gc-embed .skip,
+html.gc-embed .top-nav a[href="/campus/"],html.gc-embed #theme-toggle{display:none!important}
+html.gc-embed .app-shell{padding:18px 0 32px;max-width:none}
+/* Inner navigation = the Campus sub-tab pill bar. */
+html.gc-embed .shell-header{position:static;height:auto;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:6px;gap:8px;flex-wrap:wrap;margin:0}
+html.gc-embed .top-nav{flex:1;justify-content:flex-start;flex-wrap:wrap;gap:4px}
+html.gc-embed .nav-btn{color:var(--ink-soft);font-size:12px;font-weight:700;padding:8px 14px;border-radius:12px}
+html.gc-embed .nav-btn:hover{color:var(--ink);background:transparent}
+html.gc-embed .nav-btn.active{background:var(--card);color:#0359a1;box-shadow:0 1px 2px rgba(15,23,42,.08)}
+html.gc-embed.gc-dark .nav-btn.active{color:#7cc8fc}
+html.gc-embed .icon-btn,html.gc-embed .profile-pill,html.gc-embed .compact-control select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px}
+html.gc-embed .profile-pill{font-size:12px;font-weight:700}
+@media(max-width:1050px){html.gc-embed .top-nav{display:flex}}
+/* Hero: Campus "brand" gradient card instead of the dark teal block. */
+html.gc-embed .hero-copy{background:linear-gradient(135deg,#0c406e,#0f172a);color:#f8fafc;border-radius:24px;min-height:380px}
+html.gc-embed .hero-copy h2 em,html.gc-embed .trust-note span,html.gc-embed .trust-note button{color:#7cc8fc}
+html.gc-embed .hero-copy .eyebrow{color:#7cc8fc}
+html.gc-embed .primary-btn{background:#0270c7;color:#fff;border-radius:12px;font-weight:700}
+html.gc-embed .primary-btn:hover{background:#0359a1}
+html.gc-embed .ghost-btn{border-radius:12px}
+html.gc-embed .command-card,html.gc-embed .metrics article,html.gc-embed .profile-panel,html.gc-embed .exam-card,html.gc-embed .tool-card,
+html.gc-embed .radar-card,html.gc-embed .live-panel,html.gc-embed .search-bar,html.gc-embed .graph-query,html.gc-embed .feature-card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:20px}
+html.gc-embed .metric-icon{background:#e0effe;color:#0270c7;border-radius:12px}
+html.gc-embed.gc-dark .metric-icon{background:#0c406e;color:#7cc8fc}
+html.gc-embed .page-head h2{font-size:clamp(24px,3.2vw,34px);letter-spacing:-.03em}
+html.gc-embed .eyebrow{color:#0270c7}
+html.gc-embed.gc-dark .eyebrow{color:#7cc8fc}
+html.gc-embed input,html.gc-embed select,html.gc-embed textarea{border-radius:12px}
+html.gc-embed input:focus,html.gc-embed select:focus,html.gc-embed textarea:focus{border-color:rgba(2,112,199,.6);box-shadow:0 0 0 4px rgba(2,112,199,.18);outline:none}
+html.gc-embed.gc-dark input,html.gc-embed.gc-dark select,html.gc-embed.gc-dark textarea{background:#0f172a;border-color:#30415a;color:#e2e8f0}
+html.gc-embed button:focus-visible,html.gc-embed a:focus-visible{outline:3px solid #36adfa;outline-offset:2px}
+html.gc-embed .drawer{background:var(--card);color:var(--ink)}
+@media(max-width:680px){html.gc-embed .shell-header{padding:5px}html.gc-embed .nav-btn{padding:7px 10px}}
+html.gc-embed .commander-input button{background:#0270c7;color:#fff;border-radius:12px}
+html.gc-embed .commander-input button:hover{background:#0359a1}
+html.gc-embed .search-bar button{background:#0270c7;color:#fff;border-radius:12px}

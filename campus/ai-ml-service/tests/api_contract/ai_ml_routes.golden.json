@@ -1,0 +1,88 @@
+{
+  "app/routers/adaptive.py": [
+    "GET /adaptive/session/{session_id}/report",
+    "GET /adaptive/topics",
+    "POST /adaptive/mastery/freshness",
+    "POST /adaptive/session/answer",
+    "POST /adaptive/session/coding-submit",
+    "POST /adaptive/session/start"
+  ],
+  "app/routers/benchmark.py": [
+    "POST /benchmark/percentile"
+  ],
+  "app/routers/career_path.py": [
+    "GET /career-path/archetypes",
+    "POST /career-path/predict"
+  ],
+  "app/routers/hybrid_knowledge.py": [
+    "DELETE /rag/hybrid/knowledge/{item_id}",
+    "GET /rag/hybrid/knowledge",
+    "GET /rag/hybrid/knowledge/{item_id}/answer",
+    "POST /rag/hybrid/knowledge",
+    "POST /rag/hybrid/knowledge/{item_id}/check"
+  ],
+  "app/routers/hybrid_rag.py": [
+    "DELETE /rag/hybrid/records/{record_id}",
+    "GET /rag/hybrid/records",
+    "GET /rag/hybrid/status",
+    "POST /rag/hybrid/eligibility",
+    "POST /rag/hybrid/query",
+    "POST /rag/hybrid/records",
+    "POST /rag/hybrid/records/sweep",
+    "POST /rag/hybrid/records/{record_id}/unreachable",
+    "POST /rag/hybrid/records/{record_id}/verified",
+    "POST /rag/hybrid/retrieve"
+  ],
+  "app/routers/interview.py": [
+    "POST /interview/analyze",
+    "POST /interview/analyze/linguistic",
+    "POST /interview/analyze/rubric",
+    "POST /interview/session/respond",
+    "POST /interview/session/respond/multimodal",
+    "POST /interview/session/start",
+    "POST /interview/transcribe"
+  ],
+  "app/routers/market.py": [
+    "GET /market/heat-index",
+    "GET /market/roles",
+    "GET /market/trending",
+    "POST /market/radar"
+  ],
+  "app/routers/match.py": [
+    "GET /match/engine",
+    "POST /match/index",
+    "POST /match/resume-jd",
+    "POST /match/resume-jd/explain",
+    "POST /match/role-fit",
+    "POST /match/search"
+  ],
+  "app/routers/parse.py": [
+    "POST /parse/jd",
+    "POST /parse/resume"
+  ],
+  "app/routers/rag.py": [
+    "GET /rag/status",
+    "POST /rag/query",
+    "POST /rag/retrieve"
+  ],
+  "app/routers/resume.py": [
+    "POST /resume/analyze",
+    "POST /resume/ats-optimize",
+    "POST /resume/enhance"
+  ],
+  "app/routers/roadmap.py": [
+    "POST /roadmap/generate"
+  ],
+  "app/routers/skill_gap.py": [
+    "POST /skill-gap/analyze"
+  ],
+  "app/main.py": [
+    "GET /",
+    "GET /health",
+    "GET /ping",
+    "GET /usage",
+    "HEAD /",
+    "HEAD /health",
+    "HEAD /ping"
+  ]
+}

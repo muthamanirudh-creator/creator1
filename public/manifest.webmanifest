@@ -1,0 +1,10 @@
+{
+  "name": "GovCareer AI",
+  "short_name": "GovCareer AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4F7F3",
+  "theme_color": "#071A1D",
+  "description": "Grounded government career intelligence and exam preparation.",
+  "icons": []
+}

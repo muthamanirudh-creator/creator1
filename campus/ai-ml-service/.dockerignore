@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+tests/
+.env
+.venv/
+venv/
+data/faiss_index/
+*.md
+
+# Keep the Career Fit RAG knowledge files even though *.md is ignored above.
+!data/rag_kb/*.md

@@ -1,0 +1,16 @@
+/* Advanced Strategy Suite — reuses Bridge components (br-*) and theme tokens so light and dark both work. */
+#view-advanced{--br-soft:color-mix(in srgb,var(--ink) 6%,var(--card));--br-good:#18794E;--br-warn:#9A6700;--br-bad:#B3261E;--br-info:#1D5FA8}
+body.dark #view-advanced{--br-good:#6FE0A6;--br-warn:#F2C14E;--br-bad:#FF8C84;--br-info:#8DC2FF}
+#view-advanced details{border-top:1px solid var(--line);padding-top:8px}
+#view-advanced summary{cursor:pointer;font-weight:700;font-size:13px;min-height:32px;display:flex;align-items:center}
+#view-advanced .br-body label{display:grid;gap:4px;font-size:12px;font-weight:700}
+#view-advanced code{background:var(--br-soft);border-radius:6px;padding:1px 6px;font-size:12px}
+#view-advanced .elig{width:100%}
+#view-advanced .br-panel{display:grid;gap:14px}
+#adv-panel{display:grid;gap:14px}
+@media print{
+  .shell-header,.trust-strip,.site-footer,#adv-tabs,.page-head button,.br-row button,.nav-btn{display:none!important}
+  #view-advanced{display:block!important}
+  body{background:#fff;color:#000}
+  .br-card,.br-match{break-inside:avoid;border-color:#999}
+}

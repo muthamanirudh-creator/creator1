@@ -1,0 +1,12 @@
+const assert=require('assert');
+const fs=require('fs');
+const migration=fs.readFileSync('db/migrations/003_phase4.sql','utf8');
+const server=fs.readFileSync('server.js','utf8');
+const auth=fs.readFileSync('lib/citizenAuth.js','utf8');
+const alerts=fs.readFileSync('lib/alerts.js','utf8')+fs.readFileSync('lib/alertPlanner.js','utf8');
+for(const t of ['citizen_accounts','citizen_sessions','consent_events','watchlists','saved_searches','alert_events','notification_deliveries','application_tracker','calendar_tokens']) assert(migration.includes(`CREATE TABLE ${t}`),t);
+for(const route of ['/api/account/register','/api/account/login','/api/account/export','/api/account/watchlist/:id','/api/account/searches','/api/account/alerts','/api/account/applications/:id','/api/calendar/:token.ics','/api/map/states','/api/alerts/run']) assert(server.includes(route),route);
+assert(/\/api\/alerts\/run',\s*require\('\.\/lib\/auth'\)\.requireRole\('ADMIN'\)/.test(server),'alerts/run must be admin-only');
+assert(auth.includes('consentVersion')); assert(server.includes('CONSENT_WITHDRAWN')); 
+assert(alerts.includes('ON CONFLICT(account_id,dedupe_key) DO NOTHING')); assert(alerts.includes('DEADLINE_CHANGED')); assert(alerts.includes('NEW_MATCH'));
+console.log('Phase 4 contract tests: 10/10 passed');

@@ -1,0 +1,5 @@
+# OPTIONAL: LangChain interfaces for the shared Hybrid RAG core (app/rag_core/langchain_adapter.py).
+# The core runs without this file; install it only to expose the index as a LangChain BaseRetriever / use LangChain
+# embedding wrappers.  pip install -r requirements-rag.txt
+# Pinned to the 0.3 line of the stable, minimal interface package; verify with: python tests/test_rag_core.py
+langchain-core>=0.3.0,<0.4.0

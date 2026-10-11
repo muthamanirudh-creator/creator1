@@ -1,0 +1,26 @@
+# ML stack for REAL semantic matching (Career Fit tab, resume/JD match, skill gap, role resolution).
+# Install:   pip install -r requirements.txt        (this file is included automatically)
+# Python:    3.10 - 3.13 recommended (torch / faiss / spaCy publish wheels for these). 3.14 wheels may be missing.
+# Memory:    plan for ~1 GB free RAM (torch + MiniLM). A 512 MB host cannot run this; see README "Hosting size".
+# Disk:      ~700 MB for the CPU build of torch + ~90 MB model, downloaded once.
+
+# CPU-only PyTorch wheels (a few hundred MB instead of the multi-GB CUDA build on Linux). On Windows/macOS the
+# default PyPI wheels are already CPU/MPS builds, so this extra index is simply not needed there and is harmless.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.5.0
+
+# Transformer models + the sentence-embedding wrapper used by app/services/embeddings.py
+transformers>=4.46.0
+sentence-transformers>=3.3.1
+huggingface_hub>=0.26.0
+safetensors>=0.4.5
+tokenizers>=0.20.0
+
+# Vector search (FAISS exact inner-product index; qdrant-client / pinecone stay optional in requirements-core.txt)
+faiss-cpu>=1.9.0
+scikit-learn>=1.5.0
+
+# NLP pipeline used by app/services/parser.py (falls back to the curated vocabulary only for skill *extraction*;
+# matching itself is always done by the embedding model).
+spacy>=3.8.0
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl

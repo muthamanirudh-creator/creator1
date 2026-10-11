@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: govcareer
+      POSTGRES_PASSWORD: govcareer
+      POSTGRES_DB: govcareer
+    volumes:
+      - govcareer_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U govcareer -d govcareer"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://govcareer:govcareer@postgres:5432/govcareer
+      DB_CONNECTION_TIMEOUT_MS: 3000
+      NODE_ENV: production
+      HYBRID_RAG_SYNC_MINUTES: "30"
+      HYBRID_RAG_RECORDS_PATH: /data/hybrid_rag/records.json
+    volumes:
+      - govcareer_data:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+volumes:
+  govcareer_pg:
+  govcareer_data:

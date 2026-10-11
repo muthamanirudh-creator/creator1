@@ -1,0 +1,17 @@
+const assert=require('assert'),fs=require('fs');
+const html=fs.readFileSync('public/index.html','utf8'), js=fs.readFileSync('public/app.js','utf8'), css=fs.readFileSync('public/styles.css','utf8');
+for(const id of ['view-overview','view-opportunities','view-exams','view-career','view-tools','ai-q','ai-mode','results','exam-list','career-paths','application-list','command-palette']) assert(html.includes(`id="${id}"`),id);
+for(const api of ['/api/search','/api/assistant/ask','/api/exams','/api/exams/','/api/graph','/api/career-paths','/api/account/applications','/api/account/calendar/token','/api/operations/privacy','/api/meta']) assert(js.includes(api),api);
+assert(!html.includes('fonts.googleapis.com'),'remote font dependency');
+assert(css.includes('@media(prefers-reduced-motion:reduce)'),'reduced motion');
+assert(css.includes(':focus-visible'),'keyboard focus');
+assert(html.includes('aria-live'),'live region');
+const acct=fs.readFileSync('public/account.js','utf8');
+assert(html.includes('src="account.js"')&&html.includes('href="account.css"'),'account module wired into index.html');
+for(const api of ['/api/account/sso','/api/account/me','/api/account/watchlist/','/api/account/searches','/api/account/applications/','/api/account/alerts','/api/account/export']) assert(acct.includes(api),api);
+assert(!/type="password"|\/api\/account\/(login|register)/.test(acct),'GovCareer has no login form of its own: Campus is the only login');
+const live=fs.readFileSync('public/live.js','utf8');
+assert(html.includes('src="live.js"')&&html.includes('href="live.css"')&&live.includes('/api/stream')&&live.includes('EventSource'),'real-time layer wired');
+assert(fs.readFileSync('public/sw.js','utf8').includes('/account.js'),'service worker precaches account module');
+assert(fs.readFileSync('public/account.css','utf8').length>500,'account styles');
+console.log('UI contract tests: 10/10 passed (+ account module wiring)');

@@ -1,0 +1,5 @@
+# Everything the AI/ML service needs, including the real transformer embedding stack.
+#   pip install -r requirements.txt
+# (split in two files so the portal's auto-start can install the core first and the ML stack second)
+-r requirements-core.txt
+-r requirements-ml.txt

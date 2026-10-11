@@ -1,0 +1,16 @@
+.live-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.78rem;border:1px solid rgba(20,140,90,.35);background:rgba(20,140,90,.08);color:inherit;white-space:nowrap}
+.live-pill small{opacity:.7;min-width:3.2em}
+.live-dot{width:.6rem;height:.6rem;border-radius:50%;background:#14a05f;box-shadow:0 0 0 0 rgba(20,160,95,.6);animation:livepulse 2s infinite}
+.live-pill.is-off{border-color:rgba(200,120,0,.4);background:rgba(200,120,0,.08)}
+.live-pill.is-off .live-dot{background:#d08a00;animation:none}
+@keyframes livepulse{70%{box-shadow:0 0 0 .5rem rgba(20,160,95,0)}100%{box-shadow:0 0 0 0 rgba(20,160,95,0)}}
+.live-ticker{margin:1rem 0;padding:1rem;border:1px solid rgba(0,0,0,.12);border-radius:14px;background:rgba(255,255,255,.55)}
+.tick-row{display:flex;justify-content:space-between;gap:1rem;width:100%;padding:.55rem .2rem;border:0;border-bottom:1px solid rgba(0,0,0,.08);background:none;color:inherit;text-align:left;cursor:pointer;font:inherit}
+.tick-row time{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
+@media(max-width:700px){.live-pill small{display:none}}
+
+/* Dynamic overview metrics (metrics.js): shimmer while loading, never a misleading 0. */
+.metrics strong.gcm-skel{display:inline-block;min-width:3.2ch;height:1.05em;border-radius:8px;vertical-align:middle;background:linear-gradient(90deg,rgba(120,140,170,.18) 25%,rgba(120,140,170,.34) 50%,rgba(120,140,170,.18) 75%);background-size:200% 100%;animation:gcm-shimmer 1.2s linear infinite}
+@keyframes gcm-shimmer{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.metrics strong.gcm-skel{animation:none}}

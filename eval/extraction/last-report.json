@@ -1,0 +1,417 @@
+{
+  "documents": 18,
+  "real_documents": 0,
+  "synthetic_documents": 18,
+  "overall": {
+    "tp": 132,
+    "fp": 0,
+    "fn": 9,
+    "precision": 1,
+    "recall": 0.9362,
+    "precision_lower_bound": 0.9717,
+    "recall_lower_bound": 0.8831
+  },
+  "critical": [
+    {
+      "field": "age.cutoff_date",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "age.max",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "age.min",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "dates.application_close",
+      "tp": 17,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "precision": 1,
+      "recall": 0.9444,
+      "f1": 0.9714,
+      "precision_lower_bound": 0.8157,
+      "recall_lower_bound": 0.7424,
+      "support": 18,
+      "critical": true
+    },
+    {
+      "field": "dates.application_open",
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 1,
+      "precision": 1,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "precision_lower_bound": 0.8064,
+      "recall_lower_bound": 0.7302,
+      "support": 17,
+      "critical": true
+    },
+    {
+      "field": "education",
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 1,
+      "precision": 1,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "precision_lower_bound": 0.8064,
+      "recall_lower_bound": 0.7302,
+      "support": 17,
+      "critical": true
+    },
+    {
+      "field": "vacancies.total",
+      "tp": 15,
+      "fp": 0,
+      "fn": 1,
+      "tn": 2,
+      "precision": 1,
+      "recall": 0.9375,
+      "f1": 0.9677,
+      "precision_lower_bound": 0.7961,
+      "recall_lower_bound": 0.7167,
+      "support": 16,
+      "critical": true
+    }
+  ],
+  "critical_overall": {
+    "tp": 106,
+    "fp": 0,
+    "fn": 7,
+    "precision": 1,
+    "recall": 0.9381,
+    "precision_lower_bound": 0.965,
+    "recall_lower_bound": 0.8776
+  },
+  "fields": [
+    {
+      "field": "age.cutoff_date",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "age.max",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "age.min",
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3,
+      "precision": 1,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "precision_lower_bound": 0.7847,
+      "recall_lower_bound": 0.7018,
+      "support": 15,
+      "critical": true
+    },
+    {
+      "field": "dates.application_close",
+      "tp": 17,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "precision": 1,
+      "recall": 0.9444,
+      "f1": 0.9714,
+      "precision_lower_bound": 0.8157,
+      "recall_lower_bound": 0.7424,
+      "support": 18,
+      "critical": true
+    },
+    {
+      "field": "dates.application_open",
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 1,
+      "precision": 1,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "precision_lower_bound": 0.8064,
+      "recall_lower_bound": 0.7302,
+      "support": 17,
+      "critical": true
+    },
+    {
+      "field": "education",
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 1,
+      "precision": 1,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "precision_lower_bound": 0.8064,
+      "recall_lower_bound": 0.7302,
+      "support": 17,
+      "critical": true
+    },
+    {
+      "field": "vacancies.total",
+      "tp": 15,
+      "fp": 0,
+      "fn": 1,
+      "tn": 2,
+      "precision": 1,
+      "recall": 0.9375,
+      "f1": 0.9677,
+      "precision_lower_bound": 0.7961,
+      "recall_lower_bound": 0.7167,
+      "support": 16,
+      "critical": true
+    },
+    {
+      "field": "age.max_kind",
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "precision": null,
+      "recall": 0,
+      "f1": null,
+      "precision_lower_bound": 0,
+      "recall_lower_bound": 0,
+      "support": 1,
+      "critical": false
+    },
+    {
+      "field": "dates.exam_date",
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 13,
+      "precision": 1,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "precision_lower_bound": 0.5101,
+      "recall_lower_bound": 0.3755,
+      "support": 5,
+      "critical": false
+    },
+    {
+      "field": "domicile",
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 13,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "precision_lower_bound": 0.5655,
+      "recall_lower_bound": 0.5655,
+      "support": 5,
+      "critical": false
+    },
+    {
+      "field": "title",
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "precision_lower_bound": 0.8157,
+      "recall_lower_bound": 0.8157,
+      "support": 17,
+      "critical": false
+    }
+  ],
+  "families": [
+    {
+      "family": "BANKING",
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "DEFENCE",
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "POLICE",
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "RRB",
+      "tp": 33,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "SSC",
+      "tp": 22,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "STATE_PSC",
+      "tp": 42,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1
+    },
+    {
+      "family": "UPSC",
+      "tp": 5,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1,
+      "recall": 0.3571
+    }
+  ],
+  "errors": [
+    {
+      "case": "upsc-prose-dates",
+      "field": "dates.application_open",
+      "kind": "MISSED",
+      "gold": "2026-11-04",
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "dates.application_close",
+      "kind": "MISSED",
+      "gold": "2026-11-24",
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "dates.exam_date",
+      "kind": "MISSED",
+      "gold": "2027-05-24",
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "vacancies.total",
+      "kind": "MISSED",
+      "gold": 979,
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "age.min",
+      "kind": "MISSED",
+      "gold": 21,
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "age.max",
+      "kind": "MISSED",
+      "gold": 32,
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "age.max_kind",
+      "kind": "MISSED",
+      "gold": "MUST_NOT_HAVE_ATTAINED",
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "age.cutoff_date",
+      "kind": "MISSED",
+      "gold": "2026-08-01",
+      "got": null
+    },
+    {
+      "case": "upsc-prose-dates",
+      "field": "education",
+      "kind": "MISSED",
+      "gold": {
+        "accepted": [
+          "bachelor"
+        ],
+        "or_higher": false,
+        "fields": [
+          "any"
+        ]
+      },
+      "got": null
+    }
+  ],
+  "evidence_grade": "SYNTHETIC_ONLY",
+  "claim": "NO accuracy claim can be made for real SSC, UPSC, railway, banking or state notices: the dataset contains no adjudicated real documents. These numbers describe behaviour on synthetic text only.",
+  "gold_problems": [],
+  "human_verification": {
+    "required": true,
+    "reason": "Only 0 adjudicated real notices measured; at least 200 are needed before relaxing review."
+  }
+}

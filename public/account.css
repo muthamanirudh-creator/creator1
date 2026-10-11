@@ -1,0 +1,29 @@
+/* Account UI — uses the existing theme tokens so light/dark both work. */
+.account-pill{font-weight:700}
+.auth-card{background:var(--card);color:var(--ink);width:min(440px,92vw);border-radius:18px;padding:24px;box-shadow:var(--shadow);position:relative;max-height:84vh;overflow:auto}
+.auth-card h2{margin:0 0 12px;letter-spacing:-.03em}
+.auth-card .close{position:absolute;right:14px;top:14px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;padding:4px 10px}
+.auth-tabs{display:flex;gap:6px;margin-bottom:14px}
+.auth-tabs button{flex:1;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px;border-radius:10px;font-weight:600}
+.auth-tabs button[aria-selected=true]{background:var(--mint-strong);color:#05201F;border-color:var(--mint-strong)}
+#auth-form{display:grid;gap:12px}
+#auth-form label{display:grid;gap:4px;font-size:13px;font-weight:600}
+#auth-form input:not([type=checkbox]),.acct input:not([type=checkbox]),.acct select{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;padding:9px 10px;width:100%}
+.check{display:flex!important;grid-template-columns:none!important;align-items:flex-start;gap:8px;font-weight:500!important;font-size:12px!important}
+.check input{margin-top:3px;width:auto}
+.auth-error{color:#B3261E;min-height:18px;font-size:13px;font-weight:600}
+body.dark .auth-error{color:var(--red)}
+.fine{font-size:12px;color:var(--ink-soft)}
+.acct{margin:0 0 22px}
+.acct-signed-out,.acct-head{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:16px}
+.acct-signed-out h3,.acct-head h3{margin:2px 0}.acct-signed-out p,.acct-head p{margin:0;color:var(--ink-soft)}
+.acct-actions{display:flex;gap:8px;flex-wrap:wrap}
+.acct-stats{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft)}.acct-stats strong{color:var(--ink);font-size:18px;margin-right:3px}
+.acct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.acct-grid .wide{grid-column:1/-1}
+.acct .mini-list{display:grid;gap:8px;max-height:340px;overflow:auto;margin:10px 0}
+.acct-row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:6px 0}
+.acct .mini-item input,.acct .mini-item select{font-size:12px;padding:6px 8px;margin-top:4px}
+.danger-btn{border:1px solid #B3261E;background:transparent;color:#B3261E;border-radius:10px;padding:9px 14px;font-weight:700}
+body.dark .danger-btn{color:var(--red);border-color:var(--red)}
+@media(max-width:700px){.account-pill{max-width:90px;overflow:hidden;text-overflow:ellipsis}}

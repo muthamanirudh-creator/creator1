@@ -1,0 +1,10 @@
+const assert=require('assert'); const fs=require('fs');
+const sql=fs.readFileSync('db/migrations/005_phase5.sql','utf8');
+const tables=['exams','exam_versions','syllabus_nodes','syllabus_progress','study_plans','mock_tests','mock_attempts','career_paths'];
+for(const x of tables) assert(sql.includes(`CREATE TABLE IF NOT EXISTS ${x}`));
+const src=fs.readFileSync('lib/exams.js','utf8');
+for(const x of ['buildPlan','version','tree','tutor']) assert(src.includes(`function ${x}`)||src.includes(`${x} =`));
+const routes=fs.readFileSync('server.js','utf8');
+for(const x of ['/api/exams','/api/exams/:versionId/syllabus','/api/account/syllabus-progress/:nodeId','/api/account/study-plans','/api/mock-tests/:id/attempts','/api/career-paths','/api/assistant/tutor']) assert(routes.includes(x));
+assert(src.includes('verified')&&src.includes('syllabus_version')&&src.includes('citations'));
+console.log('Phase 5 contract tests: 9/9 passed');

@@ -1,0 +1,7 @@
+const assert=require('assert');const fs=require('fs');
+const migration=fs.readFileSync('db/migrations/004_phase6.sql','utf8');const server=fs.readFileSync('server.js','utf8');const i18n=fs.readFileSync('lib/i18n.js','utf8');const docs=fs.readFileSync('lib/userDocuments.js','utf8');const voice=fs.readFileSync('lib/voice.js','utf8');
+for(const t of ['user_documents','privacy_events','user_preferences','lineage_events','extraction_benchmarks']) assert(migration.includes(`CREATE TABLE IF NOT EXISTS ${t}`),t);
+for(const route of ['/api/account/documents/upload','/api/account/documents/:id/confirm','/api/account/documents/:id','/api/account/preferences','/api/languages','/api/voice/config','/api/operations/metrics','/api/operations/privacy','/api/lineage/:entityType/:entityId']) assert(server.includes(route),route);
+for(const code of ['en','hi','bn','te','mr','ta','gu','kn','ml','pa','or']) assert(i18n.includes(`${code}:{name:`),code); assert(docs.includes("MAX=10*1024*1024")); assert(docs.includes("'PENDING_CONFIRMATION'")); assert(docs.includes("'CONFIRMED'")); assert(voice.includes('hi-IN')&&voice.includes('or-IN')); assert(server.includes('confirm_before_use:true'));
+for(const f of fs.readdirSync('public').filter(x=>x.endsWith('.html'))){const s=fs.readFileSync('public/'+f,'utf8');assert(/<html[^>]*lang=/.test(s),f);assert(/<main\b/.test(s),f);}
+console.log('Phase 6 contract tests: 10/10 passed');

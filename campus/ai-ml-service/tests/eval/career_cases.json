@@ -1,0 +1,21 @@
+{
+  "_note": "Hand-labelled against data/rag_kb + career_paths + market data as shipped (51 passages). relevant = passage ids that answer the question. kind: exact (rare exact terms) | semantic (paraphrase) | entity (role/company terms).",
+  "cases": [
+    {"q": "Kubernetes fundamentals weeks 5-6 DevOps roadmap", "kind": "exact", "relevant": ["path-devops-engineer-m2"]},
+    {"q": "capture-the-flag project for a cybersecurity analyst", "kind": "exact", "relevant": ["path-cybersecurity-analyst-m3"]},
+    {"q": "RICE prioritisation framework for product manager first weeks", "kind": "exact", "relevant": ["path-product-manager-m0"]},
+    {"q": "STAR structure for behavioural interview answers", "kind": "exact", "relevant": ["kb-placement-guidance-3-0"]},
+    {"q": "which section headings help a resume pass ATS screening", "kind": "semantic", "relevant": ["kb-placement-guidance-1-0", "kb-placement-guidance-1-1"]},
+    {"q": "how can I prove a skill on my resume instead of only listing it", "kind": "semantic", "relevant": ["kb-placement-guidance-0-0"]},
+    {"q": "I have a skill gap, how do I plan to close it", "kind": "semantic", "relevant": ["kb-placement-guidance-2-0"]},
+    {"q": "can I move from private sector prep to government exams", "kind": "semantic", "relevant": ["kb-placement-guidance-7-0"]},
+    {"q": "what do campus drives test in the aptitude round", "kind": "semantic", "relevant": ["kb-placement-guidance-5-0"]},
+    {"q": "how should I practise data structures and algorithms regularly", "kind": "semantic", "relevant": ["kb-placement-guidance-4-0"]},
+    {"q": "which projects make my profile stronger for my target role", "kind": "semantic", "relevant": ["kb-placement-guidance-6-0"]},
+    {"q": "most in-demand skills for QA Engineer", "kind": "entity", "relevant": ["market-qa-engineer"]},
+    {"q": "skills employers ask for Cloud Engineer AWS", "kind": "entity", "relevant": ["market-cloud-engineer"]},
+    {"q": "TypeScript and component testing in the frontend engineer roadmap", "kind": "entity", "relevant": ["path-frontend-engineer-m2"]},
+    {"q": "deploy a portfolio project backend engineer weeks 7-8", "kind": "entity", "relevant": ["path-backend-engineer-m3"]},
+    {"q": "deep learning basics data scientist roadmap weeks 5-6", "kind": "entity", "relevant": ["path-data-scientist-m2"]}
+  ]
+}

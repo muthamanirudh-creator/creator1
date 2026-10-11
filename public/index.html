@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071A1D">
+<meta name="description" content="GovCareer AI — grounded government career intelligence, eligibility, exams, alerts and study planning.">
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23071A1D'/%3E%3Cpath d='M17 27h30M20 27v20m8-20v20m8-20v20m8-20v20M15 50h34M32 14l18 10H14z' fill='none' stroke='%239FE6D6' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>GovCareer AI — Career Command Center</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="account.css">
+<link rel="stylesheet" href="bridge.css">
+<link rel="stylesheet" href="live.css">
+<link rel="stylesheet" href="autolive.css">
+<link rel="stylesheet" href="advanced.css">
+<link rel="stylesheet" href="jobsplus.css">
+<link rel="stylesheet" href="prep.css">
+<link rel="stylesheet" href="trust.css">
+<link rel="stylesheet" href="national.css">
+<link rel="stylesheet" href="embed.css">
+<script src="embed.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="shell-header">
+  <div class="brand-lockup">
+    <button class="brand-mark" id="brand-home" type="button" aria-label="Go to overview">GC</button>
+    <div><div class="eyebrow">CAREER INTELLIGENCE</div><h1>GovCareer <span>AI</span></h1></div>
+  </div>
+  <nav class="top-nav" aria-label="Primary">
+    <button class="nav-btn active" data-view="overview">Overview</button>
+    <button class="nav-btn" data-view="opportunities">Opportunities</button>
+    <button class="nav-btn" data-view="exams">Exam Lab</button>
+    <button class="nav-btn" data-view="career">Career Paths</button>
+    <button class="nav-btn" data-view="bridge">Bridge</button>
+    <button class="nav-btn" data-view="advanced">Strategy</button>
+    <button class="nav-btn" data-view="tools">My Tools</button>
+    <a class="nav-btn" href="/campus/" aria-label="Open the integrated AI Campus Portal">Campus AI Portal ↗</a>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn" id="command-btn" title="Open command palette" aria-label="Open command palette">⌘K</button>
+    <label class="compact-control"><span class="sr">Language</span><select id="ui-language" aria-label="Language">
+      <option value="en">English</option><option value="hi">हिन्दी</option><option value="bn">বাংলা</option><option value="te">తెలుగు</option><option value="mr">मराठी</option><option value="ta">தமிழ்</option><option value="gu">ગુજરાતી</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option><option value="pa">ਪੰਜਾਬੀ</option><option value="or">ଓଡ଼ିଆ</option>
+    </select></label>
+    <button class="icon-btn" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    <button class="profile-pill" id="profile-jump"><span class="status-dot"></span><span id="profile-status">Profile</span></button>
+  </div>
+</header>
+
+<section class="trust-strip">
+  <div><span class="pulse"></span><strong>Grounded intelligence</strong><span>Every recruitment figure is checked against the verified record.</span></div>
+  <div class="trust-actions"><span id="system-health">Checking services…</span><button id="voice-toggle" type="button">Voice</button></div>
+</section>
+
+<main id="main" class="app-shell">
+  <section id="view-overview" class="view active">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">YOUR GOVERNMENT CAREER COMMAND CENTER</div>
+        <h2>Find the right opportunity.<br><em>Know why it fits.</em></h2>
+        <p>Search official recruitment intelligence, verify eligibility, explore exam syllabi, build study plans and keep every important deadline in one place.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-view="opportunities">Explore opportunities <span>→</span></button>
+          <button class="ghost-btn" id="hero-ask">Ask the AI</button>
+        </div>
+        <div class="trust-note"><span>✓</span> No invented dates, vacancies or eligibility rules. <button id="audit-info" type="button">How verification works</button></div>
+      </div>
+      <div class="command-card">
+        <div class="card-top"><div><span class="live-dot"></span> AI COMMANDER</div><span class="kbd">LIVE</span></div>
+        <h3>Ask anything about a recruitment</h3>
+        <div class="commander-input"><textarea id="ai-q" rows="2" placeholder="“Am I eligible for SSC CGL? What is the last date?”" aria-label="Ask GovCareer AI"></textarea><button id="ai-ask" type="button" aria-label="Ask">↗</button></div>
+        <div class="suggestions"><button data-prompt="What government jobs can I apply for?">Find jobs for me</button><button data-prompt="What are the latest deadlines?">Latest deadlines</button><button data-prompt="Explain the selection process">Selection process</button></div>
+        <div class="mode-line"><span>Answer mode</span><select id="ai-mode" aria-label="Answer mode"><option value="QUICK">Quick</option><option value="DETAILED">Detailed</option><option value="OFFICIAL_ONLY">Official-only</option><option value="ELIGIBILITY">Eligibility</option><option value="SOURCE_FIRST">Source-first</option><option value="EXPLAINED">Explained</option><option value="ACTIONABLE">Actionable</option></select></div>
+        <div id="ai-answer" class="ai-output" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="metrics" id="metrics">
+      <article><span class="metric-icon">◎</span><div><strong id="metric-jobs">—</strong><span>verified opportunities</span></div></article>
+      <article><span class="metric-icon">◷</span><div><strong id="metric-deadlines">—</strong><span>deadlines to watch</span></div></article>
+      <article><span class="metric-icon">⌁</span><div><strong id="metric-exams">—</strong><span>verified exam versions</span></div></article>
+      <article><span class="metric-icon">✓</span><div><strong id="metric-system">—</strong><span>intelligence status</span></div></article>
+    </div>
+
+    <div class="section-heading"><div><div class="eyebrow">INTELLIGENCE LAYER</div><h2>Everything connected</h2></div><p>One system from notification → eligibility → preparation → application.</p></div>
+    <div class="feature-grid">
+      <button class="feature-card" data-view="opportunities"><span class="feature-num">01</span><strong>Opportunity radar</strong><p>Natural-language search with profile-aware eligibility and deadline intelligence.</p><span class="feature-link">Explore →</span></button>
+      <button class="feature-card" data-view="exams"><span class="feature-num">02</span><strong>Exam Lab</strong><p>Version-pinned syllabi, topic progress, AI tutor and study-plan generation.</p><span class="feature-link">Open lab →</span></button>
+      <button class="feature-card" data-view="career"><span class="feature-num">03</span><strong>Career graph</strong><p>Connect roles, organisations, education levels and pathways without guessing.</p><span class="feature-link">Map paths →</span></button>
+      <button class="feature-card" data-view="tools"><span class="feature-num">04</span><strong>Personal command center</strong><p>Application tracking, saved opportunities, documents and calendar integration.</p><span class="feature-link">Open tools →</span></button>
+    </div>
+
+    <div class="section-heading compact"><div><div class="eyebrow">DEADLINE RADAR</div><h2>Act before the clock</h2></div><button class="text-btn" data-view="opportunities">See all →</button></div>
+    <div id="deadline-radar" class="radar-grid"><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+      <section class="live-panel"><div class="panel-title"><span>LIVE OFFICIAL SOURCE MONITOR</span><button id="live-refresh" class="mini-btn" type="button">Refresh now</button></div><div id="live-sources" class="live-sources"><span class="muted">Checking official recruitment portals…</span></div></section>
+  </section>
+
+  <section id="view-opportunities" class="view">
+    <div class="page-head"><div><div class="eyebrow">OPPORTUNITY RADAR</div><h2>Government opportunities, intelligently filtered.</h2><p>Describe what you want in plain language. Filters remain visible and reversible.</p></div><button class="ghost-btn" id="clear-filters">Reset filters</button></div>
+    <div class="workspace">
+      <aside class="profile-panel" id="profile-panel">
+        <div class="panel-title"><span>YOUR PROFILE</span><button id="profile-collapse" class="mini-btn">Collapse</button></div>
+        <form id="profile-form" autocomplete="off" onsubmit="return false">
+          <label>Highest qualification<select id="p-level"><option value="">Select</option></select></label>
+          <label id="w-status" hidden>Status<select id="p-status"><option value="completed">Completed</option><option value="final_year">Final year, not yet completed</option></select></label>
+          <label id="w-field" hidden>Stream<select id="p-field"><option value="">Select</option></select></label>
+          <label>Date of birth<input type="date" id="p-dob"></label>
+          <label>State where you live<select id="p-state"><option value="">Select</option></select></label>
+          <details><summary>More eligibility details</summary>
+            <label>Category<select id="p-category"><option value="">Prefer not to say</option></select></label>
+            <label class="check"><input type="checkbox" id="p-pwbd"> Person with benchmark disability</label>
+            <label class="check"><input type="checkbox" id="p-ex"> Ex-serviceman</label>
+            <label>Domicile certificate<select id="p-domicile"><option value="">Not answered</option><option value="none">I do not have one</option></select></label>
+            <label>Relevant experience<input type="number" id="p-exp" min="0" max="50" inputmode="numeric"></label>
+          </details>
+          <div class="privacy-note"><strong>Private by default.</strong> Profile data stays in this browser unless you choose an account workflow.</div>
+          <button type="button" id="clear-profile" class="text-btn">Clear profile</button>
+        </form>
+      </aside>
+      <div class="results-workspace">
+        <form id="search-form" class="search-bar" role="search"><span>⌕</span><label for="q" class="sr">Search recruitments</label><input id="q" type="search" placeholder="Try “10th pass jobs in Telangana closing this month”" autocomplete="off"><button type="submit">Search</button></form>
+        <div id="chips" class="chips" aria-live="polite"></div>
+        <div class="resultbar"><p id="count" aria-live="polite"></p><label class="check" id="hide-wrap" hidden><input type="checkbox" id="hide-not" checked> Hide not eligible</label></div>
+        <ol id="results" class="results"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-exams" class="view">
+    <div class="page-head"><div><div class="eyebrow">EXAM LAB</div><h2>Turn a syllabus into a preparation system.</h2><p>Every tutor answer is pinned to a verified exam-year syllabus version.</p></div><div class="lab-status"><span class="pulse"></span> Version-aware</div></div>
+    <div id="exam-list" class="exam-grid"><div class="loading-panel">Loading verified exam versions…</div></div>
+    <div id="exam-detail" class="exam-detail" hidden></div>
+  </section>
+
+  <section id="view-career" class="view">
+    <div class="page-head"><div><div class="eyebrow">CAREER GRAPH</div><h2>See how opportunities connect.</h2><p>Explore documented relationships between organisations, roles, education levels and domains.</p></div><button id="graph-ask-btn" class="ghost-btn">Ask the graph</button></div>
+    <div class="graph-query"><input id="graph-q" placeholder="e.g. “railway jobs for 10th pass”"><button id="graph-search" class="primary-btn">Explore</button></div>
+    <div id="graph-result" class="graph-result"><div class="loading-panel">Loading career intelligence…</div></div>
+    <div id="career-paths" class="path-grid"></div>
+  </section>
+
+  <section id="view-bridge" class="view">
+    <div class="page-head"><div><div class="eyebrow">BRIDGE · CAMPUS ↔ GOVERNMENT CAREERS</div><h2>From what you can do to the post you can win.</h2><p>Combine Campus test evidence, your resume and Exam Lab progress. Every match shows why, how sure we are, and what to practise next. Eligibility is still decided only by the verified rules.</p></div><div class="bridge-run"><label class="bridge-minutes">Study time per day <output id="br-minutes-out">120 min</output><input id="br-minutes" type="range" min="30" max="360" step="15" value="120" aria-label="Study minutes per day"></label><button id="br-run" class="primary-btn" type="button">Run Bridge</button></div></div>
+    <div id="br-banner" class="br-banner" role="status" aria-live="polite" hidden></div>
+    <div class="br-sources" id="br-sources">
+      <article class="br-card" id="br-campus"><div class="eyebrow">01 · CAMPUS</div><h3>Campus evidence</h3><div class="br-body"><div class="muted">Checking…</div></div></article>
+      <article class="br-card" id="br-resume"><div class="eyebrow">02 · RESUME</div><h3>Resume</h3><div class="br-body"></div></article>
+      <article class="br-card" id="br-self"><div class="eyebrow">03 · SELF-ASSESSMENT</div><h3>Skills you know</h3><div class="br-body"></div></article>
+    </div>
+    <div class="br-tabs" role="tablist" aria-label="Bridge results">
+      <button role="tab" id="br-tab-matches" data-tab="matches" aria-selected="true">Matches</button>
+      <button role="tab" id="br-tab-skills" data-tab="skills" aria-selected="false">My skills</button>
+      <button role="tab" id="br-tab-gaps" data-tab="gaps" aria-selected="false">Skill gaps</button>
+      <button role="tab" id="br-tab-whatif" data-tab="whatif" aria-selected="false">What-if</button>
+      <button role="tab" id="br-tab-history" data-tab="history" aria-selected="false">Progress</button>
+    </div>
+    <div id="br-panel" class="br-panel" role="tabpanel" aria-live="polite"><div class="loading-panel">Run Bridge to see matches.</div></div>
+  </section>
+
+  <section id="view-advanced" class="view">
+    <div class="page-head"><div><div class="eyebrow">STRATEGY · ADVANCED SUITE</div><h2>Plan the whole campaign, not just one application.</h2><p>Age runway, deadline conflicts, a decision matrix you control, a spaced-revision study planner, mock-test analytics, what-if scenarios and a target portfolio. Computed from verified records and the numbers you enter.</p></div></div>
+    <div class="br-tabs" id="adv-tabs" role="tablist" aria-label="Strategy tools"></div>
+    <div id="adv-panel" class="br-panel" role="tabpanel" aria-live="polite"><div class="loading-panel">Open this tab to begin.</div></div>
+  </section>
+
+  <section id="view-tools" class="view">
+    <div class="page-head"><div><div class="eyebrow">MY TOOLS</div><h2>Your application cockpit.</h2><p>Account-backed features are available when you sign in; local profile tools work without an account.</p></div><button id="tools-refresh" class="ghost-btn">Refresh</button></div>
+    <div class="tool-grid">
+      <article class="tool-card"><span>01</span><h3>Application tracker</h3><p>Track saved, applied, shortlisted and completed opportunities.</p><div id="application-list" class="mini-list"><div class="muted">Sign in to load your tracker.</div></div></article>
+      <article class="tool-card"><span>02</span><h3>Document vault</h3><p>Keep supporting documents organised with explicit confirmation before use.</p><div class="tool-stat">Confirm-before-use <strong>ON</strong></div></article>
+      <article class="tool-card"><span>03</span><h3>Calendar bridge</h3><p>Create a private ICS feed for application deadlines you track.</p><button id="calendar-btn" class="secondary-btn">Create calendar feed</button><div id="calendar-output" class="mini-output"></div></article>
+      <article class="tool-card"><span>04</span><h3>Privacy center</h3><p>Inspect data-minimisation, consent, export and erasure principles.</p><button id="privacy-btn" class="secondary-btn">View privacy controls</button></article>
+      <article class="tool-card wide"><span>05</span><h3>Audit & provenance</h3><p>Every grounded answer can expose its claims, source document and page. Use this space to understand how an answer was verified.</p><div class="audit-pill"><strong>Claim verification</strong><span>Structured record → source → answer → audit trail</span></div></article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div><strong>GovCareer AI</strong><span>Independent career intelligence.</span></div><div><span>Official sources only for published recruitment facts.</span><button id="footer-audit" class="text-btn">Verification model</button></div></footer>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" hidden><button id="d-close" class="close" aria-label="Close details">Close</button><div id="d-body"></div></aside>
+
+<div id="command-palette" class="modal-backdrop" hidden><div class="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-title"><div class="command-search"><span>⌘K</span><input id="command-input" autocomplete="off" placeholder="Jump to a feature or ask a question…"></div><div id="command-results"></div><p class="command-hint">Esc to close · Enter to open</p></div></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="trust.js" defer></script>
+<script src="app.js" defer></script>
+<script src="account.js" defer></script>
+<script src="bridge.js" defer></script>
+<script src="live.js" defer></script>
+<script src="metrics.js" defer></script>
+<script src="autolive.js" defer></script>
+<script src="national.js" defer></script>
+<script src="advanced.js" defer></script>
+<script src="jobsplus.js" defer></script>
+<script src="prep.js" defer></script>
+<script>if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
+</body>
+</html>

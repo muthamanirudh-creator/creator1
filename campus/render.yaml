@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: campus-portal
+    runtime: node
+    # SIZE: real semantic matching loads torch + a ~90 MB transformer model (~1 GB RAM). A 512 MB plan will be OOM-killed;
+    # choose a plan with >= 2 GB (e.g. `plan: standard`). The model is downloaded during the build, not on a student's request.
+    # Prepare the FastAPI AI/ML runtime during the Render build, not on the first student request.
+    # This removes the old 1–3 minute pip-install cold path that surfaced in the portal as request timeouts.
+    buildCommand: python3 -m venv ai-ml-service/.venv && ai-ml-service/.venv/bin/python -m pip install --disable-pip-version-check -r ai-ml-service/requirements.txt && ai-ml-service/.venv/bin/python ai-ml-service/scripts/download_models.py && cd backend && npm ci && npm run build
+    startCommand: cd backend && npm start
+    healthCheckPath: /api/health/live
+    envVars:
+      - key: AI_ML_AUTOINSTALL
+        value: "false"
+      - key: AI_REQUEST_TIMEOUT_MS
+        value: "20000"
+      - key: AI_ML_PROXY_TIMEOUT_MS
+        value: "100000"
+      # Pass 1: keep a REMOTE ai-ml-service awake (Render free tier sleeps after ~15 idle min) and answer Career Fit
+      # match / RAG from the built-in keyword engine while it wakes instead of timing out.
+      - key: AI_ML_KEEPALIVE
+        value: "true"
+      - key: AI_ML_KEEPALIVE_MINUTES
+        value: "9"
+      - key: AI_ML_FAST_WAKE_MS
+        value: "70000"
+      - key: AI_ML_FALLBACKABLE_TIMEOUT_MS
+        value: "85000"
+    autoDeployTrigger: commit
